@@ -2,7 +2,7 @@ import aiohttp
 import asyncio
 
 token = ''
-guild_id = '1042446271849439212'
+guild_id = ''
 
 headers = {
     'Authorization': f'Bot {token}',
@@ -24,7 +24,7 @@ async def send_dm(member):
         async with session.post('https://discord.com/api/v10/users/@me/channels', headers=headers, json=dm_data) as response:
             dm_channel = await response.json()
         message_data = {
-            'content': 'join my server https://discord.gg/aWETxytgDD' #enter ur msg here
+            'content': '' #enter ur msg here
         }
         async with session.post(f'https://discord.com/api/v10/channels/{dm_channel["id"]}/messages', headers=headers, json=message_data) as response:
             if response.status == 200:
